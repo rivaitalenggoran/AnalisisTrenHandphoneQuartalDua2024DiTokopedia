@@ -1,0 +1,123 @@
+Berikut adalah contoh eksplorasi data yang mencakup analisis tren penjualan handphone di Tokopedia pada kuartal kedua 2024:
+
+# Analisis Tren Penjualan Handphone di Tokopedia pada Kuartal 2 2024
+
+# Rivai Hayashi Hendrik Talenggoran
+
+## 1. Pendahuluan
+- **Tujuan:** Menganalisa tren penjualan handphone di Tokopedia pada kuartal kedua 2024.
+- **Latar Belakang:** Handphone menjadi kebutuhan penting di zaman yang semakin berkembang. Membangun bisnis penjualan handphone adalah opsi yang menguntungkan, mengingat handphone terus berkembang dan penjualannya meningkat setiap tahun. Analisis penjualan handphone di platform e-commerce besar seperti Tokopedia dapat membantu dalam pengambilan keputusan bisnis maupun pembelian handphone berdasarkan tren penjualan.
+
+## 2. Sumber Data
+- **Deskripsi Sumber Data:**
+  - Data diperoleh dari Tokopedia.
+
+- **Struktur Data:**
+  - **Tipe data:** String dan numerik
+  - **Data yang dikumpulkan:** `nama_produk`, `jumlah_terjual`, `harga`, `wilayah`, `rating`.
+
+- **Metode Pengumpulan Data:** 
+   - Data diambil melalui metode scrapping menggunakan Python (TokPedScrapper.py).
+   - Data kuantitatif mencakup `jumlah_terjual`, `harga`, dan `rating`.
+   - Data kualitatif mencakup `nama_produk` dan `wilayah`.
+
+## 3. Pembersihan dan Persiapan Data
+- **Proses Pembersihan Data:**
+  - **Penanganan Missing Values:** Baris dengan nilai kosong dihapus.
+  - **Penanganan Duplikasi:** Baris duplikat dihapus.
+  - **Penanganan Outlier:** Baris dengan nilai variabel yang tidak normal dihapus.
+
+- **Pra-Pemrosesan Data:**
+  - **Normalisasi dan Standarisasi:** Data dinormalisasikan agar seragam.
+  - **Transformasi Data:** Data ditransformasikan sesuai kebutuhan.
+
+## 4. Eksplorasi Data
+
+Berikut adalah beberapa analisis eksplorasi data yang dapat dilakukan:
+
+### 4.1 Distribusi Penjualan Handphone
+
+Distribusi penjualan handphone memberikan gambaran umum tentang jumlah penjualan handphone di Tokopedia pada kuartal kedua 2024.
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Membaca data dari file Excel
+df = pd.read_excel('Handphone_Clear.xlsx')
+
+# Menampilkan beberapa baris pertama data
+print(df.head())
+
+# Menggambarkan distribusi jumlah terjual
+plt.figure(figsize=(10, 6))
+sns.histplot(df['jumlah_terjual'], bins=30, kde=True)
+plt.title('Distribusi Penjualan Handphone di Tokopedia (Kuartal 2 2024)')
+plt.xlabel('Jumlah Terjual')
+plt.ylabel('Frekuensi')
+plt.show()
+```
+
+### 4.2 Tren Penjualan Berdasarkan Harga
+
+Analisis ini menunjukkan hubungan antara harga dan jumlah penjualan.
+
+```python
+plt.figure(figsize=(10, 6))
+sns.scatterplot(data=df, x='harga', y='jumlah_terjual')
+plt.title('Tren Penjualan Berdasarkan Harga')
+plt.xlabel('Harga')
+plt.ylabel('Jumlah Terjual')
+plt.show()
+```
+
+### 4.3 Penjualan Berdasarkan Wilayah
+
+Mengetahui wilayah mana yang memiliki penjualan handphone tertinggi dapat memberikan wawasan tentang pasar potensial.
+
+```python
+plt.figure(figsize=(12, 8))
+sns.countplot(data=df, y='wilayah', order=df['wilayah'].value_counts().index)
+plt.title('Penjualan Handphone Berdasarkan Wilayah')
+plt.xlabel('Jumlah Terjual')
+plt.ylabel('Wilayah')
+plt.show()
+```
+
+### 4.4 Rating Produk dan Jumlah Penjualan
+
+Analisis ini menunjukkan hubungan antara rating produk dan jumlah penjualan.
+
+```python
+plt.figure(figsize=(10, 6))
+sns.boxplot(data=df, x='rating', y='jumlah_terjual')
+plt.title('Jumlah Penjualan Berdasarkan Rating Produk')
+plt.xlabel('Rating')
+plt.ylabel('Jumlah Terjual')
+plt.show()
+```
+
+### 4.5 Produk Terlaris
+
+Mengetahui produk-produk terlaris dapat memberikan gambaran tentang produk yang paling diminati oleh konsumen.
+
+```python
+top_products = df.groupby('nama_produk')['jumlah_terjual'].sum().nlargest(10)
+
+plt.figure(figsize=(12, 8))
+sns.barplot(x=top_products.values, y=top_products.index)
+plt.title('10 Produk Handphone Terlaris di Tokopedia (Kuartal 2 2024)')
+plt.xlabel('Jumlah Terjual')
+plt.ylabel('Nama Produk')
+plt.show()
+```
+
+### Kesimpulan Sementara
+- **Distribusi Penjualan:** Menunjukkan sebaran jumlah penjualan yang terjadi selama kuartal kedua 2024.
+- **Tren Berdasarkan Harga:** Menunjukkan bagaimana harga mempengaruhi jumlah penjualan.
+- **Penjualan Berdasarkan Wilayah:** Menunjukkan wilayah dengan penjualan tertinggi.
+- **Rating dan Penjualan:** Menunjukkan hubungan antara rating produk dan jumlah penjualan.
+- **Produk Terlaris:** Menunjukkan produk yang paling banyak terjual selama periode tersebut.
+
+Analisis ini memberikan wawasan berharga yang dapat digunakan untuk strategi pemasaran dan pengambilan keputusan bisnis.
