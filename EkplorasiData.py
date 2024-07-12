@@ -2,8 +2,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+filepath = "AnalisisDanPemodelanData\Dataset\Handphone_Clear.xlsx"
 # Membaca data dari file Excel
-df = pd.read_excel('Handphone_Clear.xlsx')
+df = pd.read_excel(filepath)
 
 
 # Menggambarkan distribusi jumlah terjual
