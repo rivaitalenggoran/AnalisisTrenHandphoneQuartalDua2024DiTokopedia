@@ -8,7 +8,7 @@ from sklearn.tree import DecisionTreeClassifier
 import numpy as np
 import math
 
-df = pd.read_excel('EksplorasiDanAnalisisExcel.xlsx')
+df = pd.read_excel('DataGabung_Clear.xlsx')
 
 
 #Analisis Menggunakan Statistika Deskriptif--------------------------------------------------------
