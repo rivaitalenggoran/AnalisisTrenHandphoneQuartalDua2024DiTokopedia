@@ -5,9 +5,67 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score, confusion_matrix, classification_report
 from sklearn.tree import DecisionTreeClassifier
+import numpy as np
+import math
 
 df = pd.read_excel('Handphone_Clear.xlsx')
 
+#Analisis Menggunakan Statistika Deskriptif--------------------------------------------------------
+#Rata-Rata-----------------------------------------------------------------------------------------
+mean_jumlah_terjual = df['Sold'].mean()
+mean_harga = df['Price'].mean()
+mean_rating = df['Rating'].mean()
+print("Rata-rata jumlah terjual:", math.floor(mean_jumlah_terjual))
+print("Rata-rata harga         :", math.floor(mean_harga))
+print("Rata-rata rating        :", math.floor(mean_rating))
+
+#Median---------------------------------------------------------------------------------------
+median_jumlah_terjual = df['Sold'].median()
+median_harga = df['Price'].median()
+median_rating = df['Rating'].median()
+print("Median jumlah terjual   :", math.floor(median_jumlah_terjual))
+print("Median harga            :", math.floor(median_harga))
+print("Median rating           :", math.floor(median_rating))
+
+#Standar Deviasi------------------------------------------------------------------------------
+StandarDeviasi_jumlah_terjual = df['Sold'].std()
+StandarDeviasi_harga = df['Price'].std()
+StandarDeviasi_rating = df['Rating'].std()
+print("Standar Deviasi jumlah terjual :", math.floor(StandarDeviasi_jumlah_terjual))
+print("Standar Deviasi harga          :", math.floor(StandarDeviasi_harga))
+print("Standar Deviasi rating         :", math.floor(StandarDeviasi_rating))
+
+#Varians------------------------------------------------------------------------------
+Varians_jumlah_terjual = df['Sold'].var()
+Varians_harga = df['Price'].var()
+Varians_rating = df['Rating'].var()
+print("Varians jumlah terjual:", math.floor(Varians_jumlah_terjual))
+print("Varians harga         :", math.floor(Varians_harga))
+print("Varians rating        :", math.floor(Varians_rating))
+
+#Nilai Minimum-----------------------------------------------------------------------
+min_jumlah_terjual = df['Sold'].min()
+min_harga = df['Price'].min()
+min_rating = df['Rating'].min()
+print("Minimum Jumlah Terjual:", math.floor(min_jumlah_terjual))
+print("Minimum Harga:", math.floor(min_harga))
+print("Minimum Rating:", math.floor(min_rating))
+
+#Nilai Maksimum-----------------------------------------------------------------------
+max_jumlah_terjual = df['Sold'].max()
+max_harga = df['Price'].max()
+max_rating = df['Rating'].max()
+print("Maksimum Jumlah Terjual:", math.floor(max_jumlah_terjual))
+print("Maksimum Harga:", math.floor(max_harga))
+print("Maksimum Rating:", math.floor(max_rating))
+
+#Rentang Nilai--------------------------------------------------------------------
+print("Range Jumlah Terjual:", math.floor(max_jumlah_terjual - min_jumlah_terjual))
+print("Range Harga:", math.floor(max_harga - min_harga))
+print("Range Rating:", math.floor(max_rating - min_rating))
+
+
+#Pemodelan Data----------------------------------------------------------------------------------
 #Analisis Regresi Linear----------------------------------------------------------------------------
 # Memilih fitur dan target
 X = df[['Price']]
@@ -72,6 +130,8 @@ plt.title('Regresi Linier Berganda: Prediksi vs Aktual')
 plt.xlabel('Jumlah Terjual Aktual')
 plt.ylabel('Jumlah Terjual Prediksi')
 plt.show()
+
+
 
 #Analisis Klasifikasi Menggunakan Decision Tree----------------------------------------------------
 # Mengubah jumlah terjual menjadi kategori
