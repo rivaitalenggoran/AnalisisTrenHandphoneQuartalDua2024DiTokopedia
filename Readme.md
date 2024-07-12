@@ -52,6 +52,7 @@
 
 ## 5. Analisis dan Pemodelan Data
 - **Fitur Eksplorasi Data terdapat pada file `AnalisisDanPemodelanData.py`**
+- **Fitur Eksplorasi Data untuk Microsoft Excel terdapat pada file `EksplorasiDanAnalisisExcel.xlsx`**
 - **Analisis Regresi            :** Digunakan untuk memprediksi jumlah penjualan berdasarkan harga dan rating
   - **Analisis Regresi sederana :** Memprediksi jumlah penjualan berdasarkan harga
   - **Regresi Linier Berganda   :** Memprediksi jumlah penjualan berdasarkan harga dan rating
@@ -65,14 +66,20 @@
   - **Distribusi Penjualan    :** Sebagian besar penjualan handphone berada dalam kisaran 
                                   100 - 1500 yang menunjukkan tren penjualan handphone dengan 
                                   jumlah terjual yang cukup signifikan.
-  - **Pengaruh Harga Terhadap Penjualan :**
+  - **Pengaruh Harga Terhadap Penjualan :** Terdapat hubungan negatif antara harga dan jumlah penjualan, 
+                                            di mana handphone dengan harga lebih rendah cenderung terjual 
+                                            lebih banyak. Ini menunjukkan bahwa harga adalah faktor penting 
+                                            yang mempengaruhi keputusan pembelian konsumen.
   - **Wilayah Dengan Penjualan Tertinggi:** Penjualan handphone tertinggi terjadi di 
                                             Jakarta dan sekitarnya seperti tangerang,medan, yang menunjukkan adanya 
                                             pasar potensial di daerah-daerah tersebut. 
                                             Wilayah-wilayah dengan penjualan tertinggi ini 
                                             bisa menjadi target pemasaran yang lebih intensif.
 
-  - **Pengaruh Rating Produk Terhadap Penjualan:**
+  - **Pengaruh Rating Produk Terhadap Penjualan:** Rating produk juga mempengaruhi jumlah penjualan. 
+                                                   Produk dengan rating lebih tinggi cenderung terjual 
+                                                   lebih banyak, menunjukkan bahwa kualitas dan kepuasan 
+                                                   pelanggan memainkan peran penting dalam meningkatkan penjualan.
   - **Produk Terlaris:** Iphone sebagai produk 
                         terlaris dengan jumlah penjualan yang sangat tinggi. Disusul dengan Samsung
                         diurutan kedua dan xiaomi diurutan yang ketiga.
