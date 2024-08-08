@@ -1,14 +1,12 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score, confusion_matrix, classification_report
 from sklearn.tree import DecisionTreeClassifier
-import numpy as np
 import math
 
-df = pd.read_excel('DataGabung_Clear.xlsx')
+df = pd.read_excel('Dataset//DataGabung_Clear.xlsx')
 
 
 #Analisis Menggunakan Statistika Deskriptif--------------------------------------------------------

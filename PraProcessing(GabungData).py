@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 # Tentukan folder yang berisi file-file CSV
-folder_path = 'AnalisisTrenHandphoneQuartalDua2024DiTokopedia'
+folder_path = 'Dataset//Dataset_Handphone'
 
 # Buat list untuk menyimpan semua DataFrame
 data_frames = []
@@ -20,6 +20,6 @@ for file_name in os.listdir(folder_path):
 combined_df = pd.concat(data_frames, ignore_index=True)
 
 # Simpan DataFrame yang sudah digabungkan ke file CSV baru
-combined_df.to_csv('AnalisisTrenHandphoneQuartalDua2024DiTokopedia\Dataset\DataGabung.csv', index=False)
+combined_df.to_csv('Dataset//DataGabung.csv', index=False)
 
 print("Data berhasil digabungkan dan disimpan!")

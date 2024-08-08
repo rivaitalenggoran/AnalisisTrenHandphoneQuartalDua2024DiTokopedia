@@ -2,7 +2,7 @@ import pandas as pd
 import re
 
 
-dataframe = pd.read_csv('DataGabung.csv')
+dataframe = pd.read_csv('Dataset//DataGabung.csv')
 
 ### PROSES PEMBERSIHAN DATA(duplikat,missing value)
 
@@ -98,7 +98,7 @@ new_dataframe['Location'] = dataLocation
 print(new_dataframe)
 
 new_dataframe2 = pd.DataFrame(new_dataframe, columns=['Name','Price', 'Sold', 'Rating', 'Category', 'Location'])
-new_dataframe2.to_excel('Data_Gabung_Clear.xlsx')
+new_dataframe2.to_excel('Dataset//DataGabung_Clear.xlsx')
 print('Done!')
 
 

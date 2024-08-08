@@ -4,7 +4,7 @@ import seaborn as sns
 
 
 # Membaca data dari file Excel
-df = pd.read_excel("DataGabung_Clear.xlsx")
+df = pd.read_excel("Dataset//DataGabung_Clear.xlsx")
 
 
 # Menggambarkan distribusi jumlah terjual
